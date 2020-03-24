@@ -9,4 +9,8 @@ class Customer extends Model
     protected $table = "customers";
 
     protected $fillable = ['company','department','name','furigana','phone','email'];
+
+    public function items(){
+        return $this->belongsToMany(Item::class, 'customer_items');
+    }
 }
