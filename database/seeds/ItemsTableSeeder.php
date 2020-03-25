@@ -1,6 +1,6 @@
 <?php
 
-use App\Item;
+use App\Models\Item;
 use Illuminate\Database\Seeder;
 
 class ItemsTableSeeder extends Seeder

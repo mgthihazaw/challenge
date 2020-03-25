@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::group(['prefix' => 'entry'],function(){
+    Route::get('/','FormController@index')->name('entry');
+    Route::post('/create','FormController@create')->name('entry.create');
 });
