@@ -13,7 +13,7 @@
         </div><!-- h1ttl -->
 
         <div class="mainbox">
-        <form method="post" action="{{ route('entry.create') }}">
+        <form method="post" action="{{ route('entry.confirm') }}">
                 @csrf              
               
                 <div id="form_caution">
@@ -97,7 +97,7 @@
                                 </tr>
                                 <tr class="reqrired {{ $errors->has('mailaddress') ? 'error' : '' }} ">
                                     <th>メールアドレス(半角英数字)</th>
-                                    <td><input type="text" name="mailaddress" class="required" placeholder="メールアドレスを入力してください" value="{{ old('') }}">
+                                    <td><input type="text" name="mailaddress" class="required" placeholder="メールアドレスを入力してください" value="{{ old('mailaddress') }}">
                                         @error('mailaddress')<p class="error_mes">{{ $message }}</p>@enderror
                                     </td>
                                 </tr>
@@ -136,7 +136,7 @@
 
                     <div class="btn_area">
                         <input type="submit" name="send" value="確認画面へ進む" class="btn btn_confirm">
-                        <input type="hidden" name="token" value="">
+                        {{-- <input type="hidden" name="token" value=""> --}}
                     </div>
 
                 </div><!-- /.entry_detail -->

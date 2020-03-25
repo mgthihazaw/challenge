@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'entry'],function(){
     Route::get('/','FormController@index')->name('entry');
-    Route::post('/create','FormController@create')->name('entry.create');
+    Route::post('/confirm','FormController@confirm')->name('entry.confirm');
+    Route::post('/complete','FormController@complete')->name('entry.complete');
 });

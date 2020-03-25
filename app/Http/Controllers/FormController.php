@@ -16,9 +16,10 @@ class FormController extends BaseController
      return view('forms.entry')->withItems($items);
  }
 
- public function create(EntryFormRequest $request){
+ public function confirm(EntryFormRequest $request){
 
     
-
+    $this->setPageTitle('お問い合わせ　確認画面');
+    return view('forms.confirm')->withData($request);
  }
 }
