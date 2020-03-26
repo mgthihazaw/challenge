@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,5 @@ Route::group(['prefix' => 'entry'],function(){
     Route::get('/','FormController@index')->name('entry');
     Route::post('/confirm','FormController@confirm')->name('entry.confirm');
     Route::post('/complete','FormController@complete')->name('entry.complete');
+
 });

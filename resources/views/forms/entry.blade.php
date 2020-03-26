@@ -1,7 +1,65 @@
+
 @extends('app')
 
 @section('title') {{ $title }}│{{ config('app.name') }} @endsection
-
+@push('styles')
+<style >
+    .flash{
+        display :flex;
+        justify-content: center;
+        background-color:red;
+        align-items: center;
+    
+        color:white;
+        width:100%;
+        margin-bottom: 20px;
+        padding:5px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 2px 5px 10px rgba(00,00,00,0.6);
+       -webkit-box-shadow: 0px 50px  0 rgba(#000,0.4);
+       animation:toLeft .3s;
+       backface-visibility: hidden;
+       transition:display 0.3s;
+    }
+    .flash__message{
+    flex: 1 0 95%;
+    padding-top:5px;
+    
+    }
+    .flash__btn{
+       flex:1 0 5%;
+       font-size: 20px;
+       font-weight:bold;
+       display:inline-block;
+       align-items: stretch;
+       cursor:pointer;
+    }
+    .flash__btn:active .flash{
+        font-size:40px;
+    }
+    @keyframes toLeft{
+        0%{
+            transform:scale(0);
+        }
+        20%{
+            transform:scale(0.2);
+        }
+       40%{
+            transform:scale(0.4);
+        }
+        60%{
+            transform:scale(0.6);
+        }
+        80%{
+            transform:scale(0.8);
+        }
+        100%{
+            transform:scale(1);
+        }
+    }
+</style>
+@endpush
 
 @section('content')
 <div class="content">
@@ -14,8 +72,14 @@
 
         <div class="mainbox">
         <form method="post" action="{{ route('entry.confirm') }}">
-                @csrf              
-              
+                @csrf       
+                      
+                @if($error =Session::get('error'))
+                <div class="flash" id="flash">
+                    <p class="flash__message">{{ $error }}</p>
+                    <a  class="flash__btn">x</a>
+                </div>
+                @endif
                 <div id="form_caution">
                     <p>株式会社スカラネクストへのお問い合わせは、下記フォームからお願いいたします。</p>
                     <div class="form_list">
@@ -148,3 +212,13 @@
 
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    $(".flash__btn").click(function(){
+        
+         $("#flash").css("display","none");
+        
+    })
+</script>
+@endpush

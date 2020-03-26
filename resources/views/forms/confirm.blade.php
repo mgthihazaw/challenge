@@ -15,7 +15,14 @@
         <div class="mainbox">
         <form method="post" action="{{ route('entry.complete') }}">
                 @csrf
-                
+        <input type="hidden" name="subject" value="{{ $data->subject->name }}">
+                <input type="hidden" name="opinion" value="{{ $data->opinion }}">
+                <input type="hidden" name="company" value="{{ $data->company }}">
+                <input type="hidden" name="section" value="{{ $data->section }}">
+                <input type="hidden" name="name" value="{{ $data->name }}">
+                <input type="hidden" name="ruby" value="{{ $data->ruby }}">
+                <input type="hidden" name="tel" value="{{ $data->tel }}">
+                <input type="hidden" name="mailaddress" value="{{ $data->mailaddress }}">
                 <div class="entry_detail">
                     <div id="form_inq">
                         <div class="h2ttl">
@@ -27,13 +34,13 @@
                                     <tr>
                                         <th>お問い合わせ内容</th>
                                         <td>
-                                            i-giftについて
+                                            {{ $data->subject->description }}{{-- i-giftについて --}}
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>内容<br>(できるだけ具体的に<br>お書き下さい)</th>
                                         <td>
-                                            高山のテスト
+                                            {{ $data->opinion }}{{-- 高山のテスト --}}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -51,37 +58,37 @@
                                     <tr>
                                         <th>会社名 / 団体名<br></th>
                                         <td>
-                                            高山潤
+                                            {{ $data->company }} {{-- 高山潤 --}}
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>部署名</th>
                                         <td>
-                                            マンダレー支社
+                                            {{ $data->section }} {{-- マンダレー支社 --}}
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>お名前</th>
                                         <td>
-                                            高山　潤
+                                            {{ $data->name }} {{-- 高山　潤 --}}
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>ふりがな</th>
                                         <td>
-                                            たかやまじゅん
+                                            {{ $data->ruby }}{{-- たかやまじゅん --}}
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>電話番号</th>
                                         <td>
-                                            08012345678
+                                            {{ $data->tel }} {{-- 08012345678 --}}
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>メールアドレス</th>
                                         <td>
-                                            test@scala-next.com
+                                            {{ $data->mailaddress }} {{-- test@scala-next.com --}}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -90,7 +97,7 @@
                     </div><!-- #form_info -->
 
                     <div class="btn_area">
-                        <a href="./EntryForm.html"><input type="button" value="戻る" class="btn btn_back"></a>
+                    <a href="{{ URL::previous() }}" id="back"><input type="button" value="戻る" class="btn btn_back"></a>
                         <input type="submit" value="送　信" class="btn btn_entry">
                     </div>
 
@@ -105,3 +112,4 @@
 
 </div>
 @endsection
+

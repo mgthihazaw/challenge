@@ -30,7 +30,7 @@ class EntryFormRequest extends FormRequest
             "section" => "sometimes|max:50",
             "name"    => "required|max:20",
             "ruby"    => "sometimes|max:20",
-            "tel"   => "required|numeric|max:20",
+            "tel"   => "required|numeric|digits_between:0,20",
             "mailaddress"   => "required|email"
 
         ];
@@ -49,7 +49,7 @@ class EntryFormRequest extends FormRequest
             "ruby.max" => "20文字以内で入力してください",
             "tel.required" => "電話番号を入力してください",
             "tel.numeric"  => "数字のみで入力してください",
-            "tel.max"      => "20文字以内で入力してください",
+            "tel.digits_between"      => "20文字以内で入力してください",
             "mailaddress.required" => "メールアドレスを入力してください",
             "mailaddress.email" => "メールアドレスが正しくありません",
         ];

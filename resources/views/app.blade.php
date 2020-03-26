@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="./img/favicon.ico">
     <link rel="stylesheet" href="{{ asset('/css/common_01.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/inquiry_01.css') }}">
+    @stack('styles')
 </head>
 
 <body>
@@ -37,6 +38,7 @@
     <script type="text/javascript" src="{{ asset('/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/smoothscroll.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/inquiry-common.js') }}"></script>
+    @stack('scripts')
 </body>
 
 </html>
