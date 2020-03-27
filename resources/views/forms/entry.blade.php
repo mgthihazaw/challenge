@@ -217,7 +217,7 @@
 <script>
     $(".flash__btn").click(function(){
         
-         $("#flash").css("display","none");
+         $(this).parent().css({"display":"none"});
         
     })
 </script>

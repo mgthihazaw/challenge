@@ -97,7 +97,7 @@
                     </div><!-- #form_info -->
 
                     <div class="btn_area">
-                    <a href="{{ URL::previous() }}" id="back"><input type="button" value="戻る" class="btn btn_back"></a>
+                    <a href="#" id="back" onclick="goBack()"><input type="button" value="戻る" class="btn btn_back"></a>
                         <input type="submit" value="送　信" class="btn btn_entry">
                     </div>
 
@@ -112,4 +112,12 @@
 
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    function goBack() {
+       window.history.back();
+    }
+</script>
+@endpush
 

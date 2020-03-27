@@ -4,13 +4,14 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <meta http-equiv="content-style-type" content="text/css">
     <meta http-equiv="content-script-type" content="text/javascript">
     <meta name="robots" content="all">
     <meta name="author" content="株式会社スカラネクスト">
     <meta name="copyright" content="株式会社スカラネクスト">
-    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('/img/favicon.ico') }}">
     <link rel="stylesheet" href="{{ asset('/css/common_01.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/inquiry_01.css') }}">
     @stack('styles')
