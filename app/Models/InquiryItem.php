@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class InquiryItem extends Model
 {
-    protected $table = 'items';
+    protected $table = 'inquiry_items';
     
     protected $fillable =['name','description'];
 
     public function customers(){
-        return $this->belongsToMany(Customer::class, 'customer_items');
+        return $this->belongsToMany(Customer::class, 'customer_inquiry_items');
     }
     
 }

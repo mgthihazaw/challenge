@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\HelpMethod;
 use Illuminate\Http\Request;
 
 class BaseController extends Controller
 {
-    protected function setPageTitle($title)
-    {
-        view()->share(['title' => $title]);
-    }
+   use HelpMethod;
 }

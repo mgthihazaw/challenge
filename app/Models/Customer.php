@@ -8,9 +8,10 @@ class Customer extends Model
 {
     protected $table = "customers";
 
-    protected $fillable = ['company','department','name','furiguna','phone','email'];
+    protected $fillable = ['company','department','name','ruby','phone','email'];
 
     public function items(){
-        return $this->belongsToMany(Item::class, 'customer_items');
+        return $this->belongsToMany(InquiryItem::class, 'customer_items');
     }
+    
 }

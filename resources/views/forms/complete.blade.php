@@ -2,10 +2,8 @@
 
 @section('title') {{ $title }}│{{ config('app.name') }} @endsection
 
-
 @section('content')
 <div class="content finish">
-
     <!-- main -->
     <div class="main">
         <div class="h1ttl">
@@ -23,9 +21,7 @@
             </div>
 
         </div><!-- /.mainbox -->
-
     </div>
     <!-- /.main -->
-
 </div>
 @endsection

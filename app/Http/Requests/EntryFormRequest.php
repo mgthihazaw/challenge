@@ -24,7 +24,7 @@ class EntryFormRequest extends FormRequest
     public function rules()
     {
         return [
-            "subject" => "required",
+            "subject" => "required|exists:inquiry_items,name",
             "opinion" => "required|max:500",
             "company" => "required|max:50",
             "section" => "sometimes|max:50",

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCustomerItemsTable extends Migration
+class CreateCustomerInquiryItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateCustomerItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('customer_items', function (Blueprint $table) {
+        Schema::create('customer_inquiry_items', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('inquiry_item_id');
             $table->unsignedBigInteger('customer_id');
-            $table->foreign('item_id')->references('id')->on('items');
+            $table->foreign('inquiry_item_id')->references('id')->on('inquiry_items');
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->timestamps();
         });

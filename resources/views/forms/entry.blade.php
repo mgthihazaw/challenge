@@ -6,39 +6,33 @@
 <style >
     .flash{
         display :flex;
-        justify-content: center;
-        background-color:red;
-        align-items: center;
-    
+        justify-content: space-between;
+        background-color:#cc3322;
         color:white;
         width:100%;
         margin-bottom: 20px;
-        padding:5px;
-        text-align: center;
         border-radius: 5px;
         box-shadow: 2px 5px 10px rgba(00,00,00,0.6);
        -webkit-box-shadow: 0px 50px  0 rgba(#000,0.4);
-       animation:toLeft .3s;
-       backface-visibility: hidden;
+       animation:error .3s;
        transition:display 0.3s;
     }
     .flash__message{
-    flex: 1 0 95%;
-    padding-top:5px;
+    flex-basis: 1;
+    font-size: 20px;
+    padding-top:8px;
+    padding-left: 30px;
     
     }
     .flash__btn{
-       flex:1 0 5%;
        font-size: 20px;
        font-weight:bold;
-       display:inline-block;
        align-items: stretch;
        cursor:pointer;
+       margin :5px;
+       padding:0 5px;
     }
-    .flash__btn:active .flash{
-        font-size:40px;
-    }
-    @keyframes toLeft{
+    @keyframes error{
         0%{
             transform:scale(0);
         }
@@ -72,7 +66,7 @@
 
         <div class="mainbox">
         <form method="post" action="{{ route('entry.confirm') }}">
-                @csrf       
+                @csrf 
                       
                 @if($error =Session::get('error'))
                 <div class="flash" id="flash">
@@ -216,9 +210,7 @@
 @push('scripts')
 <script>
     $(".flash__btn").click(function(){
-        
-         $(this).parent().css({"display":"none"});
-        
-    })
+         $(this).parent().css({"display":"none"}); 
+    });
 </script>
 @endpush

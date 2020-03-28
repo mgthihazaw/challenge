@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\Item;
+use App\Models\InquiryItem;
+
 use Illuminate\Database\Seeder;
 
 class ItemsTableSeeder extends Seeder
@@ -51,7 +52,7 @@ class ItemsTableSeeder extends Seeder
     public function run()
     {
         foreach($this->items as $index=>$item){
-            $result = Item::create($item);
+            $result = InquiryItem::create($item);
             if (!$result) {
                 $this->command->info("Insert failed at record $index.");
                 return;
