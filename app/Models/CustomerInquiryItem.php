@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CustomerItem extends Model
+class CustomerInquiryItem extends Model
 {
-    protected $table = "customers_inquiry_items";
+    protected $table = "customer_inquiry_items";
 
     protected $fillable = ['content', 'customer_id', 'inquiry_item_id'];
     

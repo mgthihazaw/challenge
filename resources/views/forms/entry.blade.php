@@ -68,12 +68,7 @@
         <form method="post" action="{{ route('entry.confirm') }}">
                 @csrf 
                       
-                @if($error =Session::get('error'))
-                <div class="flash" id="flash">
-                    <p class="flash__message">{{ $error }}</p>
-                    <a  class="flash__btn">x</a>
-                </div>
-                @endif
+                
                 <div id="form_caution">
                     <p>株式会社スカラネクストへのお問い合わせは、下記フォームからお願いいたします。</p>
                     <div class="form_list">
@@ -84,6 +79,16 @@
                         </ul>
                     </div>
                 </div>
+                @if($error =Session::get('error'))
+                <div class="flash" id="flash">
+                    <p class="flash__message">{{ $error }}</p>
+                    <a  class="flash__btn">x</a>
+                </div>
+                @elseif(session()->has('errors'))
+                <div id="box_message">
+                    <p>下記の入力項目が未入力か、入力内容に不備があるようです。<br>お手数ですが、「入力画面に戻る」ボタンで前のページに戻り、入力内容をご確認下さい。</p>
+                </div>
+                @endif
 
                 <div class="entry_detail">
                     <div id="form_inq">

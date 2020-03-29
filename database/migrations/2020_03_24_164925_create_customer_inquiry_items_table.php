@@ -31,6 +31,6 @@ class CreateCustomerInquiryItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customer_items');
+        Schema::dropIfExists('customer_inquiry_items');
     }
 }
