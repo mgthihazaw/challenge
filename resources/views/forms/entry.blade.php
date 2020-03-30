@@ -14,8 +14,8 @@
         border-radius: 5px;
         box-shadow: 2px 5px 10px rgba(00,00,00,0.6);
        -webkit-box-shadow: 0px 50px  0 rgba(#000,0.4);
-       animation:error .3s;
-       transition:display 0.3s;
+       animation:error .4s;
+       
     }
     .flash__message{
     flex-basis: 1;
@@ -27,7 +27,7 @@
     .flash__btn{
        font-size: 20px;
        font-weight:bold;
-       align-items: stretch;
+       align-items: center;
        cursor:pointer;
        margin :5px;
        padding:0 5px;
@@ -79,14 +79,16 @@
                         </ul>
                     </div>
                 </div>
+
                 @if($error =Session::get('error'))
                 <div class="flash" id="flash">
                     <p class="flash__message">{{ $error }}</p>
                     <a  class="flash__btn">x</a>
                 </div>
                 @elseif(session()->has('errors'))
-                <div id="box_message">
-                    <p>下記の入力項目が未入力か、入力内容に不備があるようです。<br>お手数ですが、「入力画面に戻る」ボタンで前のページに戻り、入力内容をご確認下さい。</p>
+                <div class="flash" id="flash">
+                    <p class="flash__message">下記の入力項目が未入力か、入力内容に不備があるようです。<br>お手数ですが、「入力画面に戻る」ボタンで前のページに戻り、入力内容をご確認下さい。</p>
+                    <a  class="flash__btn">x</a>
                 </div>
                 @endif
 

@@ -16,11 +16,8 @@ use Illuminate\Support\Facades\URL;
 Route::get('/',function(){
     return redirect('/entry');
 });
-
-
 Route::group(['prefix' => 'entry'],function(){
     Route::get('/','FormController@entry')->name('entry');
     Route::post('/confirm','FormController@confirm')->name('entry.confirm');
     Route::post('/complete','FormController@complete')->name('entry.complete');
-
 });

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class InquiryItem extends Model
 {
+    public $timestamps = false;
+    
     protected $table = 'inquiry_items';
     
     protected $fillable =['name','description'];
